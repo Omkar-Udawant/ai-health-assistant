@@ -63,4 +63,5 @@ disease, prob = predict_disease(processed_text)
 
 print("\n--- Diagnosis ---")
 print("Predicted Disease:", disease)
+
 print("Confidence:", round(prob * 100, 2), "%")
