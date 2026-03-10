@@ -87,3 +87,4 @@ speak(f"My confidence level is {round(prob*100,2)} percent.")
 
 speak("I recommend consulting a nearby doctor and staying hydrated.")
 speak("If symptoms worsen, please seek medical help immediately.")
+
