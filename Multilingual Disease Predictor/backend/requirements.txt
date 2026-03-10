@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+openai
+deep-translator
+langdetect
+scikit-learn
+python-dotenv

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant</title>
+    <meta name="description" content="A professional multilingual AI disease predictor and health assistant.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class='bx bxs-spa glow-icon'></i>
+                    <h1>AI <span>Doctor</span></h1>
+                </div>
+                <div class="status">
+                    <div class="status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-area" id="chat-box">
+            <!-- Messages will be injected here via JS -->
+            <div class="message ai-message startup-anim">
+                <div class="avatar"><i class='bx bx-bot'></i></div>
+                <div class="content">
+                    <p>Hello! I'm your AI health assistant. How are you feeling today?</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Diagnosis Trigger -->
+        <div class="action-bar hidden" id="action-bar">
+            <button class="btn-diagnose" id="btn-diagnose" onclick="getDiagnosis()">
+                <i class='bx bx-analyse' ></i> Get Diagnosis
+            </button>
+        </div>
+
+        <!-- Input Area -->
+        <footer class="app-footer">
+            <div class="input-container">
+                <button class="btn-icon" id="btn-mic" onclick="toggleVoice()" aria-label="Microphone">
+                    <i class='bx bxs-microphone'></i>
+                </button>
+                <input type="text" id="chat-input" placeholder="Describe your symptoms..." onkeypress="handleKeyPress(event)" autocomplete="off">
+                <button class="btn-icon send" id="btn-send" onclick="sendMessage()" aria-label="Send">
+                    <i class='bx bxs-paper-plane'></i>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Diagnosis Modal -->
+    <div class="modal-overlay" id="diagnosis-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class='bx bx-shield-plus'></i> AI Diagnosis</h2>
+                <button class="btn-close" onclick="closeModal()"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="result-card">
+                    <p class="label">Predicted Condition</p>
+                    <h3 id="diag-disease" class="disease-name">Loading...</h3>
+                    <div class="confidence-wrapper">
+                        <div class="confidence-header">
+                            <span>Confidence Score</span>
+                            <span id="diag-confidence-text">--%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="diag-progress"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="disclaimer"><i class='bx bx-info-circle' ></i> <strong>Disclaimer:</strong> This tool is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
