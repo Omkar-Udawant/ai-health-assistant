@@ -4,7 +4,6 @@ const btnMic = document.getElementById('btn-mic');
 const actionBar = document.getElementById('action-bar');
 const modalOverlay = document.getElementById('diagnosis-modal');
 const diagProgress = document.getElementById('diag-progress');
-
 let messages = []; // Chat history for the backend
 let userTexts = []; // Only user texts for the ML diagnosis
 let isRecording = false;
